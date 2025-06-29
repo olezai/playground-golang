@@ -1,9 +1,10 @@
 package greetings
 
-// this package will be used as a module
+// this package is a module
 import (
 	"errors"
 	"fmt"
+	"math/rand"
 )
 
 // Hello returns a greeting for the named person.
@@ -12,9 +13,24 @@ func Hello(name string) (string, error) {
 	if name == "" {
 		return "", errors.New("empty name")
 	}
-	// if a name was received return a greeting that embeds the name in a message
-	// the := operator is a shortcut for declaring and initializing a variable in one line
-	message := fmt.Sprintf("Hi, %v. Welcome!", name)
+	// create a message using a random format
+	message := fmt.Sprintf(randomFormat(), name)
 
 	return message, nil
+}
+
+// randomFormat returns one of a set of greeting messages. The returned
+// message is selected at random
+func randomFormat() string {
+	// a slice of message formats
+	formats := []string{
+		"Hi, %v. Welcome!",
+		"Great to see you, %v!",
+		"Hail, %v! Well met!",
+		"What's up, %v?",
+	}
+
+	// return a randomly selected message format by specifying
+	// a random index for the slice of formats
+	return formats[rand.Intn(len(formats))]
 }

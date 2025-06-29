@@ -8,7 +8,6 @@ import (
 )
 
 func main() {
-	// get a greeting message and print it
 	// set properties of the predefined Logger, including
 	// the log entry prefix and a flag to disable printing
 	// the time, source file, and line number.
@@ -16,7 +15,7 @@ func main() {
 	log.SetFlags(0)
 
 	// request a greeting message;
-	message, err := greetings.Hello("")
+	message, err := greetings.Hello("Allessius")
 	// if an error was returned, print it to the console
 	// and exit the program
 	if err != nil {
