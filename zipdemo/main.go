@@ -4,7 +4,7 @@ import (
 	"log"
 	"os"
 	"path/filepath"
-	"zipdemo/zipdemo"
+	"zipdemo/mytools"
 )
 
 func main() {
@@ -26,11 +26,11 @@ This is a demo file.`
 	archivePath := filepath.Join(workDir, archiveName)
 
 	// Create and zip the file with error handling
-	if err := zipdemo.CreateFile(filePath, content); err != nil {
+	if err := mytools.CreateFile(filePath, content); err != nil {
 		log.Fatalf("Failed to create file: %v", err)
 	}
 
-	if err := zipdemo.ZipFile(archivePath, filePath); err != nil {
+	if err := mytools.ZipFile(archivePath, filePath); err != nil {
 		log.Fatalf("Failed to create zip archive: %v", err)
 	}
 

@@ -1,4 +1,4 @@
-package zipdemo
+package mytools
 
 import (
 	"archive/zip"
