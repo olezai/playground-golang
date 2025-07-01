@@ -1,3 +1,0 @@
-This is some random text that will be zipped.
-Hello World!
-This is a demo file.
